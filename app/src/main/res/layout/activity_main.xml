@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="200sp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5sp"
+        android:layout_marginLeft="5sp"
+        android:orientation="horizontal"
+        android:gravity="left"
+        android:layout_gravity="left">
+
+
+        <ImageView
+            android:layout_width="30sp"
+            android:layout_height="30sp"
+            android:src="@drawable/heart2"
+            android:id="@+id/imgComputerHp1">
+        </ImageView>
+
+        <ImageView
+            android:layout_width="30sp"
+            android:layout_height="30sp"
+            android:src="@drawable/heart2"
+            android:id="@+id/imgComputerHp2">
+        </ImageView>
+
+        <ImageView
+            android:layout_width="30sp"
+            android:layout_height="30sp"
+            android:src="@drawable/heart2"
+            android:id="@+id/imgComputerHp3">
+        </ImageView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Gép"
+            android:textSize="28sp">
+        </TextView>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5sp"
+        android:layout_marginRight="5sp"
+        android:orientation="horizontal"
+        android:gravity="right"
+        android:layout_gravity="right">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Játékos"
+            android:textSize="28sp">
+        </TextView>
+
+        <ImageView
+            android:layout_width="30sp"
+            android:layout_height="30sp"
+            android:src="@drawable/heart2"
+            android:id="@+id/imgGamerHp3">
+        </ImageView>
+
+        <ImageView
+            android:layout_width="30sp"
+            android:layout_height="30sp"
+            android:src="@drawable/heart2"
+            android:id="@+id/imgGamerHp2">
+        </ImageView>
+
+        <ImageView
+            android:layout_width="30sp"
+            android:layout_height="30sp"
+            android:src="@drawable/heart2"
+            android:id="@+id/imgGamerHp1">
+        </ImageView>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="70sp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Döntetlenek száma: 0"
+            android:textSize="28sp"
+            android:id="@+id/tvResult">
+        </TextView>
+
+        <ImageView
+            android:layout_width="100sp"
+            android:layout_height="100sp"
+            android:src="@drawable/rock"
+            android:id="@+id/imgComputer"
+            android:layout_marginTop="25sp">
+        </ImageView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="A gép választása"
+            android:textSize="28sp"
+            android:id="@+id/tvcomputer">
+        </TextView>
+
+        <ImageView
+            android:layout_width="100sp"
+            android:layout_height="100sp"
+            android:src="@drawable/rock"
+            android:id="@+id/imgGamer"
+            android:layout_marginTop="20sp">
+        </ImageView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="A te választásod"
+            android:textSize="28sp"
+            android:id="@+id/tvHuman">
+        </TextView>
+
+        <!--<TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Eredmény: Ember: 0 Computer: 0"
+            android:textSize="25sp"
+            android:id="@+id/tvResult">
+        </TextView>-->
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="70sp">
+
+        <Button
+            android:layout_width="80sp"
+            android:layout_height="80sp"
+            android:layout_marginTop="380sp"
+            android:background="@drawable/rock"
+            android:id="@+id/btnKo">
+        </Button>
+
+        <Button
+            android:layout_width="80sp"
+            android:layout_height="80sp"
+            android:layout_marginLeft="15sp"
+            android:layout_marginTop="380sp"
+            android:background="@drawable/paper"
+            android:id="@+id/btnPapir">
+        </Button>
+
+        <Button
+            android:layout_width="80sp"
+            android:layout_height="80sp"
+            android:layout_marginLeft="15sp"
+            android:layout_marginTop="380sp"
+            android:background="@drawable/scissors"
+            android:id="@+id/btnOllo">
+        </Button>
+
+    </LinearLayout>
+
+</RelativeLayout>

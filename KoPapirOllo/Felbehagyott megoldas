@@ -1,0 +1,105 @@
+Félbehagyott megoldás
+
+
+package com.example.kopapirollo;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import java.text.MessageFormat;
+
+public class MainActivity extends AppCompatActivity {
+
+    private ImageView ImgTeValasztasod, ImgGepValasztasa;
+    private TextView TvEredmeny;
+    private Button btnKo, btnPapir, btnOllo;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        init();
+
+        btnKo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ImgTeValasztasod.setImageResource(R.drawable.rock);
+                KoGep++;
+                GepSorsol();
+            }
+        });
+
+        btnPapir.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ImgTeValasztasod.setImageResource(R.drawable.paper);
+                PapirGep++;
+                GepSorsol();
+            }
+        });
+
+        btnOllo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ImgTeValasztasod.setImageResource(R.drawable.scissors);
+                OlloGep++;
+                GepSorsol();
+            }
+        });
+    }
+
+    private void GepSorsol() {
+        int GepValaszt = (int)(Math.random() * 3);
+
+        switch (GepValaszt) {
+
+            case 1:
+                ImgGepValasztasa.setImageResource(R.drawable.rock);
+                KoTe++;
+                //TvEredmeny.setText(MessageFormat.format("{0}", "G: " + GepValaszt));
+                Toast.makeText(MainActivity.this, "KőTe " + KoTe, Toast.LENGTH_SHORT).show();
+                break;
+
+            case 2:
+                ImgGepValasztasa.setImageResource(R.drawable.paper);
+                PapirTe++;
+                break;
+
+            case 3:
+                ImgGepValasztasa.setImageResource(R.drawable.scissors);
+                OlloTe++;
+                break;
+        }
+
+        Kiertekel();
+    }
+
+    private void Kiertekel() {
+
+
+
+        if (KoTe > OlloGep) {
+            Toast.makeText(MainActivity.this, "Kő Te állása: " + KoTe, Toast.LENGTH_SHORT).show();
+            Toast.makeText(MainActivity.this, "Olló  Gép állása: " + KoTe, Toast.LENGTH_SHORT).show();
+            Toast.makeText(MainActivity.this, "Kő veri az ollót", Toast.LENGTH_SHORT).show();
+
+        }
+
+    }
+
+    private void init() {
+        ImgTeValasztasod = findViewById(R.id.ImgTeValasztasod);
+        ImgGepValasztasa = findViewById(R.id.ImgGepValasztasa);
+        TvEredmeny = findViewById(R.id.TvEredmeny);
+        btnKo = findViewById(R.id.btnKo);
+        btnPapir = findViewById(R.id.btnPapir);
+        btnOllo = findViewById(R.id.btnOllo);
+    }
+}
