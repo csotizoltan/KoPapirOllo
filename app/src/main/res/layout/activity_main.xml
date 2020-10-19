@@ -156,7 +156,7 @@
             android:layout_height="80sp"
             android:layout_marginTop="380sp"
             android:background="@drawable/rock"
-            android:id="@+id/btnKo">
+            android:id="@+id/btnRock">
         </Button>
 
         <Button
@@ -165,7 +165,7 @@
             android:layout_marginLeft="15sp"
             android:layout_marginTop="380sp"
             android:background="@drawable/paper"
-            android:id="@+id/btnPapir">
+            android:id="@+id/btnPaper">
         </Button>
 
         <Button
@@ -174,7 +174,7 @@
             android:layout_marginLeft="15sp"
             android:layout_marginTop="380sp"
             android:background="@drawable/scissors"
-            android:id="@+id/btnOllo">
+            android:id="@+id/btnScissors">
         </Button>
 
     </LinearLayout>
