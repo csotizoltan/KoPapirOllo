@@ -1,14 +1,16 @@
 package com.example.kopapirollo;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
-import java.text.MessageFormat;
 import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
@@ -59,23 +61,36 @@ public class MainActivity extends AppCompatActivity {
         //Random rnd = new Random();
         //int r = rnd.nextInt(3);
 
-        switch (computer) {
-            case 1:
-                imgComputer.setImageResource(R.drawable.rock);
-                //TvEredmeny.setText(MessageFormat.format("{0}", "G: " + GepValaszt));
-                break;
 
-            case 2:
-                imgComputer.setImageResource(R.drawable.paper);
-                break;
-
-            case 3:
-                imgComputer.setImageResource(R.drawable.scissors);
-                break;
+        if (computer == 0) {
+            imgComputer.setImageResource(R.drawable.rock);
         }
+
+        else if (computer == 1) {
+            imgComputer.setImageResource(R.drawable.paper);
+        }
+
+        else if (computer == 2) {
+            imgComputer.setImageResource(R.drawable.scissors);
+        }
+
+
+        String eredmenyKiiras = "";
+
+        eredmenyKiiras = (gamer == 0 && computer == 2 || gamer == 1 && computer == 0 || gamer == 2 && computer == 1
+                ? "Nyert" : computer == gamer ? "Döntetlen" : "Vesztet");
+
+        Toast.makeText(getApplicationContext(), eredmenyKiiras, Toast.LENGTH_SHORT).show();
+
+        Kiertekel(gamer, computer);
+
+        tvResult.setText("Döntetlenek száma: " + hpEqual);
+
+        JatekVege();
+
     }
 
-    private void Kiertekel() {
+    private void Kiertekel(int gamer, int   computer) {
 
         /*Szabályok
         Kő veri az ollót.
@@ -83,6 +98,31 @@ public class MainActivity extends AppCompatActivity {
         Papír veri a követ.*/
 
     }
+
+
+    private void JatekVege() {
+
+        AlertDialog.Builder AlertEndGame = new AlertDialog.Builder(this);
+
+
+    }
+
+
+    private void NewGame() {
+        hpGamer = 0;
+        hpComputer = 0;
+        hpEqual = 0;
+
+        tvResult.setText("Döntetlenek száma: 0");
+
+        imgComputerHp1.setImageResource(R.drawable.heart2);
+        imgComputerHp2.setImageResource(R.drawable.heart2);
+        imgComputerHp3.setImageResource(R.drawable.heart2);
+        imgGamerHp3.setImageResource(R.drawable.heart2);
+        imgGamerHp2.setImageResource(R.drawable.heart2);
+        imgGamerHp1.setImageResource(R.drawable.heart2);
+    }
+
 
     private void init() {
         imgGamer = findViewById(R.id.imgGamer);
